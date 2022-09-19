@@ -5,15 +5,22 @@ let heading1 = document.querySelector('h1');
 let header1 = heading1.closest('header')
 //console.log(header);
 
-header1.style.border = "5px solid grey"
+header1.style.border = "5px solid black"
 
 
 // If the `.info` section contains an `.info-package`, select all `package-title`s and give the title's previous element a border.
+const info = document.querySelector('.info')
+const infoPackage = document.querySelector('.info-package')
+const packageTitle = document.querySelectorAll('.package-title')
 
-let listItems = document.querySelectorAll('.package-title')
-// console.log(listItems);
+if (info.contains(infoPackage)) {
+    packageTitle.forEach((item) => {
+        item.previousElementSibling.style.border = "solid black"
+    });
+};
 
-listItems.forEach(item => item.previousElementSibling.style.border = "solid black")
+
+
 
 
 
@@ -36,8 +43,6 @@ label.forEach((item) => {
 // Add all the children of the `.nav-list` to the footer's unordered list, `.site-map`. Note: the `.nav-list` should still contain its children. ![alt text](images/footer.png "Footer")
 
 let navItems = document.querySelector('.nav-list');
-// console.log(navItems.children);
-
 
 let siteMap = document.querySelector('.site-map');
 
